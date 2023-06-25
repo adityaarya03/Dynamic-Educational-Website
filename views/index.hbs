@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>DevelopZen</title>
+  </head>
+  <body>
+    {{>navbar data=details}}
+
+    <div>
+    {{>slider slides=slides}}
+    </div>
+
+
+
+
+    {{!-- banner 1 section --}}
+  <section class="banner1_section background1 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          
+          <h1>Start Learning New technology here</h1>
+          <p>Get started with your Web Dvelopment Jounrey</p>
+          <a href="/learn"><button class="btn btn-outline-primary">Start Learning</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+    {{!-- {{services section}} --}}
+
+    <section id="services_section" class="py-3">
+    <div class="container">
+      <h1 class="text-center text-secondary">Our Services</h1>
+
+      <div class="row mt-5">
+        {{#each services}}
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="containter text-center py-3">
+                <i class="{{this.icon}} service_icon"></i>
+
+                </div>
+                <h3 class="card-title">{{this.title}}</h3>
+                <p>{{this.description}}</p>
+                <a href="{{this.link}}">{{this.linkText}}</a>
+              </div>
+            </div>
+        </div>
+        {{/each}}
+
+      </div>
+
+    </div>
+
+    </section>
+
+
+
+    {{!-- banner 2 section --}}
+
+    <section class="banner2_section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 pt-5 banner2properties">
+            {{!-- left side --}}
+            <h3>We Work For Students,Not For Money</h3>
+            <p>We work to provide you best study material including short notes, handwritten notes, scanned notes, coding sheets etc.
+              We are trying our best to help the new students in their coding journey. You can start learning for free. You can also contact us in case of queries related to coding, we will try our best to help you out with your projects.
+            </p>
+            {{!-- <button class="btn btn-primary">Click Here</button> --}}
+          </div>
+          <div class="col-md">
+            {{!-- right side --}}
+            <img src="/static/images/graphic1.jpg" alt="" style="max-height:350px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {{!-- banner3 section --}}
+    <section class="banner2_section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            {{!-- right side --}}
+            <img src="/static/images/graphic2.jpg" class="img-fluid" alt="" style="max-height:350px;">
+          </div>
+          <div class="col-md-6 pt-5 banner2properties">
+            {{!-- left side --}}
+            <h3>Join Us</h3>
+            <p>Join Us to provide study material to the students who cannot afford expensive coachings.
+              You can Join us by providing your Details and your qualifiactions in our contact us form. Fill the neccessary details in the query section and we will reach out to you as soon as possible.
+            </p>
+            <a href="/#contact_us_section"><button class="btn btn-primary">Click Here</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  {{!-- contact us section --}}
+  <section id="contact_us_section" class="py-5 background1">
+    <div class="container">
+      <h3 class="text-center text-secondary">Contact Us</h3>
+      <div class="row">
+        <div class="col-mid-12">
+                <form action="/process-contact-form" method="post">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Your Email address</label>
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Your Contact Number</label>
+                  <input  name="phone" type="phone" class="form-control" id="contactNumberField" placeholder="Phone No.">
+                </div>
+
+                <div class="form-group mt-3 ">
+                  <label for="queryField">Enter Your Query</label>
+                  <textarea name="query" style="height:150px" class="form-control" placeholder="Explain your query" id="queryField" rows="3"></textarea>
+                </div>
+
+                <div class="container text-center">
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  {{!-- about section --}}
+  <section id="about_section" class="about_section_class pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>About This Site</h3>
+          <p>This website is Developed by the Students for the students. This website's sole purpose is to provide study materail and help other students in their college journey.
+            We are trying our best to help the new students in their coding journey.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer background1 text-center py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center p-4" style="background-color:rgba(0,0,0,0.05)">
+          © 2023 Copyright: <p>DevelopZen</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
